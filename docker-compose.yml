@@ -11,13 +11,16 @@ services:
       - 80:80
       - 443:443
     networks:
-      - external_network
+      - misskey_external_network
 
   certbot:
     image: certbot/dns-cloudflare:latest
-    env_file:
-      - ./certbot.env
     volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+      - ./letsencrypt:/etc/letsencrypt
       - /var/www/html:/var/www/html
+      - ./certbot.ini:/certbot.ini
     command: ["--version"]
+
+networks:
+  misskey_external_network:
+    external: true
