@@ -12,7 +12,9 @@ services:
       - external_network
 
   certbot:
-    image: certbot/certbot:latest
+    image: certbot/dns-cloudflare:latest
+    env_file:
+      - ./certbot.env
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/www/html:/var/www/html
