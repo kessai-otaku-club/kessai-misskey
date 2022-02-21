@@ -1,13 +1,19 @@
 # nginx-for-misskey
 
-証明書を取得
+## 証明書を操作
 
 ```sh
-docker compose run certbot certonly --nginx
+sh cert.sh [new|renew|renew-test]
 ```
+
+### new
+
+証明書を新規に取得
+
+### renew
 
 証明書を更新
 
-```sh
-certbot renew
-```
+### renew-test
+
+`renew` コマンドを走らせるテスト(dry-run)する
