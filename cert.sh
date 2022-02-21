@@ -5,8 +5,8 @@ readonly REQUIRE_ARGS="--dns-cloudflare --dns-cloudflare-credentials /certbot.in
 
 case $1 in
   "new") docker-compose run certbot certonly $REQUIRE_ARGS ;;
-  "renew") docker-compose run certbot renew $REQUIRE_ARGS ;;
-  "renew-test") docker-compose run certbot renew $REQUIRE_ARGS --dry-run ;;
+  "renew") docker-compose run certbot renew ;;
+  "renew-test") docker-compose run certbot renew --dry-run ;;
   "test") echo $REQUIRE_ARGS ;;
   *) echo "Usage: cert.sh {new|renew|renew-test}" ;;
 esac
