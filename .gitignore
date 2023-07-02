@@ -1,4 +1,6 @@
 *.env
 *.ini
 /letsencrypt
-!.keep
+!/letsencrypt/.keep
+/.config
+!/config/.keep
