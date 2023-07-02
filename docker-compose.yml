@@ -11,7 +11,7 @@ services:
       - 80:80
       - 443:443
     networks:
-      - external_network
+      - misskey_external_network
 
   web:
     #build: .
@@ -24,8 +24,8 @@ services:
     ports:
       - "127.0.0.1:3000:3000"
     networks:
-      - internal_network
-      - external_network
+      - misskey_internal_network
+      - misskey_external_network
     volumes:
       - ./files:/misskey/files
       - ./.config:/misskey/.config:ro
@@ -34,7 +34,7 @@ services:
     restart: always
     image: redis:7.0-alpine
     networks:
-      - internal_network
+      - misskey_internal_network
     volumes:
       - ./redis:/data
 
@@ -42,7 +42,7 @@ services:
     restart: always
     image: postgres:12.2-alpine
     networks:
-      - internal_network
+      - misskey_internal_network
     env_file:
       - .config/docker.env
     volumes:
@@ -55,7 +55,7 @@ services:
 #      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
 #      - "TAKE_FILE_OWNERSHIP=111"
 #    networks:
-#      - internal_network
+#      - misskey_internal_network
 #    volumes:
 #      - ./elasticsearch:/usr/share/elasticsearch/data
 
@@ -68,7 +68,7 @@ services:
     command: ["--version"]
 
 networks:
-  internal_network:
+  misskey_internal_network:
     internal: true
-  external_network:
+  misskey_external_network:
     external: true
