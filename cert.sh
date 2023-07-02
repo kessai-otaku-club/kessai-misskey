@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly REQUIRE_ARGS="--dns-cloudflare --dns-cloudflare-credentials /certbot.ini -d msk.kessai-otaku.club -d media.kessai-otaku.club"
+readonly REQUIRE_ARGS="--dns-cloudflare --dns-cloudflare-credentials /certbot.ini -d msk.kessai-otaku.club -d media.kessai-otaku.club  --dns-cloudflare-propagation-seconds 30"
 
 
 case $1 in
