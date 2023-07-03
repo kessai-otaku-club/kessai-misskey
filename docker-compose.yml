@@ -82,7 +82,7 @@ services:
       - misskey_internal_network
       - misskey_external_network
     dns:
-      - 8.8.8.8
+      - 1.1.1.1
 
 networks:
   misskey_internal_network:
