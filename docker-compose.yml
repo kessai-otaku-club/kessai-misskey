@@ -76,7 +76,7 @@ services:
       - auto_retirement=0
       - opts=-v
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/lib/mackerel-agent/:/var/lib/mackerel-agent/
     networks:
       - misskey_internal_network
