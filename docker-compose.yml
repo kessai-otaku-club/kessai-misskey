@@ -67,6 +67,20 @@ services:
       - ./certbot.ini:/certbot.ini
     command: ["--version"]
 
+  mackerel:
+    restart: always
+    image: mackerel/mackerel-agent:0.77.0
+    env_file: .config/mackerel.env
+    environment:
+      - enable_docker_plugin=1
+      - auto_retirement=0
+      - opts=-v
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/mackerel-agent/:/var/lib/mackerel-agent/
+    networks:
+      - misskey_internal_network
+
 networks:
   misskey_internal_network:
     internal: true
