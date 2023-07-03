@@ -80,6 +80,7 @@ services:
       - /var/lib/mackerel-agent/:/var/lib/mackerel-agent/
     networks:
       - misskey_internal_network
+      - misskey_external_network
 
 networks:
   misskey_internal_network:
