@@ -27,7 +27,6 @@ services:
       - "127.0.0.1:3000:3000"
     networks:
       - misskey_internal_network
-      - misskey_external_network
     volumes:
       - ./files:/misskey/files
       - ./.config:/misskey/.config:ro
