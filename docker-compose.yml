@@ -19,10 +19,10 @@ services:
     #build: .
     image: misskey/misskey:13.14.2
     restart: always
-    links:
+    depends_on:
+      - nginx
       - db
       - redis
-#      - es
     ports:
       - "127.0.0.1:3000:3000"
     networks:
