@@ -15,7 +15,7 @@ services:
 
   web:
     #build: .
-    image: misskey/misskey:13.13.2
+    image: misskey/misskey:13.14.2
     restart: always
     links:
       - db
