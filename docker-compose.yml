@@ -84,12 +84,12 @@ services:
       - /var/lib/mackerel-agent/:/var/lib/mackerel-agent/
     networks:
       - misskey_internal_network
-      - mackerel_external_network
+      - misskey_external_network
+    dns:
+      - 1.1.1.1
 
 networks:
   misskey_internal_network:
     internal: true
   misskey_external_network:
-    external: true
-  mackerel_external_network:
     external: true
