@@ -12,6 +12,8 @@ services:
       - 443:443
     networks:
       - misskey_external_network
+    environment:
+      - TZ=Asia/Tokyo
 
   web:
     #build: .
@@ -29,6 +31,8 @@ services:
     volumes:
       - ./files:/misskey/files
       - ./.config:/misskey/.config:ro
+    environment: 
+      - TZ=Asia/Tokyo
 
   redis:
     restart: always
