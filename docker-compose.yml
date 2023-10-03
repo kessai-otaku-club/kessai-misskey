@@ -38,7 +38,7 @@ services:
 
   redis:
     restart: always
-    image: redis:7.0-alpine
+    image: redis:7.2-alpine
     networks:
       - misskey_internal_network
     volumes:
