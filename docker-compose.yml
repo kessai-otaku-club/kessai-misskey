@@ -18,7 +18,7 @@ services:
 
   web:
     #build: .
-    image: misskey/misskey:2023.9.3
+    image: misskey/misskey:13.14.2
     restart: always
     depends_on:
       db:
