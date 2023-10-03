@@ -87,7 +87,7 @@ services:
 
   mackerel:
     restart: always
-    image: mackerel/mackerel-agent:0.77.1
+    image: mackerel/mackerel-agent:0.78.0
     env_file: .config/mackerel.env
     environment:
       - enable_docker_plugin=1
