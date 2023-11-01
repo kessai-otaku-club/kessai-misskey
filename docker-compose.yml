@@ -76,7 +76,7 @@ services:
 #      - ./elasticsearch:/usr/share/elasticsearch/data
 
   certbot:
-    image: certbot/dns-cloudflare:v2.6.0
+    image: certbot/dns-cloudflare:v2.7.4
     networks:
       - misskey_external_network
     volumes:
