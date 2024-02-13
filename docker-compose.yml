@@ -51,7 +51,7 @@ services:
 
   db:
     restart: always
-    image: postgres:15.5-alpine
+    image: postgres:15.6-alpine
     networks:
       - misskey_internal_network
     env_file:
